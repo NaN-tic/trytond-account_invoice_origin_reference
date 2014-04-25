@@ -34,5 +34,7 @@ class InvoiceLine:
                         reference = getattr(p, 'reference')
                     else:
                         reference = getattr(p, 'rec_name')
+                else:
+                    reference = origin.rec_name
             res[line.id] = reference
         return res
