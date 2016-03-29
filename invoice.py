@@ -10,10 +10,10 @@ from sql.operators import Like
 
 
 __all__ = ['InvoiceLine']
-__metaclass__ = PoolMeta
 
 
 class InvoiceLine:
+    __metaclass__ = PoolMeta
     __name__ = 'account.invoice.line'
     origin_reference_name = fields.Function(fields.Char('Origin Reference'),
         'get_origin_reference_name', searcher='search_origin_reference_name')
