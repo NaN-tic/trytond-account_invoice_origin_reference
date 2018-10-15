@@ -3,17 +3,14 @@
 #the full copyright notices and license terms.
 from trytond.model import fields
 from trytond.pool import Pool, PoolMeta
-
 from sql import Cast, Literal
 from sql.functions import Substring, Position
 from sql.operators import Like
 
-
 __all__ = ['InvoiceLine']
 
 
-class InvoiceLine:
-    __metaclass__ = PoolMeta
+class InvoiceLine(metaclass=PoolMeta):
     __name__ = 'account.invoice.line'
     origin_reference_name = fields.Function(fields.Char('Origin Reference'),
         'get_origin_reference_name', searcher='search_origin_reference_name')
